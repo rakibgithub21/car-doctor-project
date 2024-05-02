@@ -15,7 +15,10 @@ const Navbar = () => {
         <li><NavLink to={'/'}>Home</NavLink></li>
         {
             user?.email ?
-                <li><button onClick={handleLogout}>Logout</button></li> :
+                <div className='flex gap-1 items-center'>
+                    <li><button onClick={handleLogout}>Logout</button></li>
+                    <NavLink to={'/bookings'}>Bookings</NavLink>
+                </div> :
                 <li><NavLink to={'/sign-in'}>login</NavLink></li>
         }
     </>
